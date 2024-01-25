@@ -22,7 +22,7 @@ public class EjercicioPracticaMatrices {
             }
         }
         System.out.println("La cantidad de 3 que ahi dentro del vector es: "+ contador);
-         */
+         
      
         Double matriz[][] = new Double[4][4];
         Double suma = 0.0;
@@ -47,6 +47,46 @@ public class EjercicioPracticaMatrices {
 
             }
             System.out.println("El promedio de las notas es: " + matriz[f][3]);
+        }*/
+
+        String ciudades[] = new String[5];
+        Double minimas[] = new Double[5];
+        Double maximas[] = new Double[5];
+
+        Scanner teclado = new Scanner(System.in);
+        Scanner teclado2 = new Scanner(System.in);
+
+        for (int i = 0; i < ciudades.length; i++) {
+            System.out.println("Ingrese el nombre de la ciudad: " + i);
+            ciudades[i] = teclado.next();
+
+            System.out.println("Ingrese la temperatura minima: " + i);
+            minimas[i] = teclado2.nextDouble();
+
+            System.out.println("Ingrese la temperatura maxima: " + i);
+            maximas[i] = teclado2.nextDouble();
         }
+
+        Double min = 9999999.00;
+        Double max = -9999999.00;
+        int posMin = -1;
+        int posMax = -1;
+
+        for (int i = 0; i < ciudades.length; i++) {
+            if (minimas[i] < min) {
+                min = minimas[i];
+                posMin = i;
+            } else if (maximas[i] > max) {
+                max = maximas[i];
+                posMax = i;
+            }
+        }
+
+        System.out.println("La temperatura minima es de: " + min);
+        System.out.println("Se registro en la ciudad de: " + ciudades[posMin]);
+
+        System.out.println("La temperatura maxima es de: " + max);
+        System.out.println("Se registro en la ciudad de: " + ciudades[posMax]);
+
     }
 }
